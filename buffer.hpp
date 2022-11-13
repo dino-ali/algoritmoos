@@ -36,4 +36,8 @@ private:
   const EditorBuffer & operator=(const EditorBuffer & rhs) {return *this;}
 };
 
+EditorBuffer EditorBuffer(){
+  
+}
+
 #endif
