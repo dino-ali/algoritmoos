@@ -37,7 +37,8 @@ private:
 };
 
 EditorBuffer EditorBuffer(){
-  
+  before
+  after
 }
 
 #endif
