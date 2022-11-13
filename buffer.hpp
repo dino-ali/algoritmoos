@@ -28,3 +28,12 @@ public:
   std::string getText() const;
   int getCursor() const;
   
+private:
+  CharStack before();
+  CharStack after();
+  
+  EditorBuffer(const EditorBuffer & value) { }
+  const EditorBuffer & operator=(const EditorBuffer & rhs) {return *this;}
+};
+
+#endif
