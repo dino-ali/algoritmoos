@@ -59,3 +59,15 @@ void displayBuffer(EditorBuffer & buffer){
   cout << endl;
   cout << string(2 * buffer.getCursor(), ' ') << "^" << endl;
 }
+
+void ptrintHelpText(){
+  cout<<"Editor commands:"<<endl;
+  cout<<" Iabc Insert the characters abc at the cursor position"<<endl;
+  cout<<" F Moves the cursor forward onecharacter"<<endl;
+  cout<<" B Moves the cursor backward one character" <<endl;
+  cout<<" D Deletes the character afrer the cursor"<<endl;
+  cout<<" J Jumps to the end of the buffer"<<endl;
+  cout<<" E Jumps to the beginning of the buffer"<<endl;
+  cout<<" H Prints this message "<<endl;
+  cout<<" Q Exits from the editor program"<<endl;
+}
