@@ -79,5 +79,7 @@ void moveCursorBackward(){
   cursor = before.pop();
 }
 
-void moveCursorToStart(){}
+void moveCursorToStart(){
+  
+}
   #endif
