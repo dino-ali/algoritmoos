@@ -10,6 +10,7 @@ OJO NOTAS PARA NOSOTRAS AL FINAL
 #ifndef _buffer_h
 #define _buffer_h
 #include <stack>
+#include <string>
 //Class editor buffer
 
 class EditorBuffer{
@@ -17,22 +18,23 @@ public:
   EditorBuffer();
   ~EditorBuffer();
   
-  void moveCursorForward();//wiiiiii
-  void moveCursorBackward();//wiiiiiiii
+  void moveCursorForward(); //wiiii
+  void moveCursorBackward(); //wiiii
   
-  void moveCursorToStart();
-  void moveCursosToEnd();
+  void moveCursorToStart(); // wiiii
+  void moveCursorToEnd(); // wiiii
   
-  void insertCharacter(char ch);//wii
-  void deleteCharacter();//wii
+  void insertCharacter(char ch); //wiiii
+  void deleteCharacter(); //wiiii
   
   
   std::string getText() const;
   int getCursor() const;
   
 private:
-  std::stack<char> before();//wii
-  std::stack<char> after();//wii
+  std::stack<char> before();//wiiii
+  std::stack<char> after();//wiiii
+  int cursor; // wiiii
   
   EditorBuffer(const EditorBuffer & value) { }
   const EditorBuffer & operator=(const EditorBuffer & rhs) {return *this;}
@@ -41,45 +43,52 @@ private:
 EditorBuffer EditorBuffer(){
   std::stack<char> before;
   std::stack<char> after;
-  int *cursor = before.top();
+  cursor = before.size();
 }
-~EditorBuffer(){
-  int b_size = before.size();
-  int a_size = after.size();
-  for (int i = 0; i<b_size;i++{
-    before.pop();
-  }
-  for (int j=0; j<a_size();j++){
-    after.pop();
-  }
-  cursor = nullptr;
-}
+
+~EditorBuffer(){}
        
 void insertCharacter(char ch){
   before.push(ch);
-  cursor = before.top();
+  cursor = before.size();
 }
        
 void deleteCharacter(){
-  before.pop();
-  cursor = before.top();
+  after.pop();
+  cursor = before.size();
 }
        
 void moveCursorForward(){
   char a = after.top();
   before.push(a);
   after.pop();
-  cursor = before.top() 
+  cursor = before.size() 
 } 
        
 void moveCursorBackward(){
-  char a = after.top();
+  char a = before.top();
   after.push(a);
   before.pop();
-  cursor = before.pop();
+  cursor = before.size();
 }
 
 void moveCursorToStart(){
-  
+  while (!before.empty()){
+    moveCursorBackward(); 
+  }
 }
-  #endif
+
+void moveCursorToEnd(){
+	while (!after.empty()){
+		moveCursorForward();
+	}
+}
+
+std::string getText() const{
+	moveCursor
+	string letra;
+	letra.push_back();
+	return letra;
+}
+
+#endif
